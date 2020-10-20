@@ -21,17 +21,17 @@
 			<div class="container-fluid border">
 				<h1>Parte Video</h1>
 				<br>
-				<video width="600" controls>
-					<source src="https://www.youtube.com/watch?v=bo9Z_pgByQY">
+				<video id="miVideo" width="900">
+				  <source src="mov_bbb.mp4" type="video/mp4">
+				  <source src="mov_bbb.ogg" type="video/ogg">
 				</video>
 				<br>
 				<br>
 				<div class="col-lg-9">
 					<div class="container border">
-						<button type="button" class="btn-lg btn-primary">Primary</button>
-						<button type="button" class="btn-lg btn-primary">Primary2</button>
-						<button type="button" class="btn-lg btn-primary">Primary3</button>
-						<button type="button" class="btn-lg btn-primary">Primary4</button>
+						<button type="button" onclick="play()" class="btn-lg btn-primary">Play</button>
+						<button type="button" onclick="pause()" class="btn-lg btn-primary">Pausa</button>
+						<button type="button" onclick="reiniciar()" class="btn-lg btn-primary">Reiniciar Prueba</button>
 					</div>
 				</div>
 			</div>
@@ -50,6 +50,32 @@
 		</div>
 	</div>
 	<div class="row"></div>
+
+		<script> 
+		var myVideo = document.getElementById("miVideo"); 
+		
+		function play() { 
+		  if (myVideo.paused) 
+		    myVideo.play(); 
+		} 
+		function pause(){
+			myVideo.pause();
+		}
+		function reiniciar(){
+			myVideo.load();
+		}
+		function makeBig() { 
+		    myVideo.width = 900; 
+		} 
+		
+		function makeSmall() { 
+		    myVideo.width = 400; 
+		} 
+		
+		function makeNormal() { 
+		    myVideo.width = 420; 
+		} 
+		</script> 
 
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->

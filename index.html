@@ -14,68 +14,95 @@
 
 <title>Reproductor</title>
 </head>
-<body>
+<body id="fondo">
 
 	<div class="row">
 		<div class="col-lg-9">
-			<div class="container-fluid border">
-				<h1>Parte Video</h1>
+			<div class="container-fluid">
+				<br>
+				<h1 id="tituloOcultable">
+					<u><em>Aqui va el titulo del video</em></u>
+					<button type="button" onclick="play()" style="margin-left: 4em"
+						class="btn-lg btn-primary">Play</button>
+				</h1>
 				<br>
 				<video id="miVideo" width="900">
-				  <source src="mov_bbb.mp4" type="video/mp4">
-				  <source src="mov_bbb.ogg" type="video/ogg">
+					<source src="mov_bbb.mp4" type="video/mp4">
+					<source src="mov_bbb.ogg" type="video/ogg">
 				</video>
-				<br>
-				<br>
-				<div class="col-lg-9">
-					<div class="container border">
-						<button type="button" onclick="play()" class="btn-lg btn-primary">Play</button>
-						<button type="button" onclick="pause()" class="btn-lg btn-primary">Pausa</button>
-						<button type="button" onclick="reiniciar()" class="btn-lg btn-primary">Reiniciar Prueba</button>
+				<br> <br>
+				<div class="col-lg-9" id="botones">
+					<div class="container">
+						<button type="button" onclick="play()" class="btn-lg btn-success">Play</button>
+						<button type="button" onclick="pause()" class="btn-lg btn-danger">Pausa</button>
+						<button type="button" onclick="reiniciar()" class="btn-lg btn-warning" style="margin-left: 1.5em">Reiniciar Prueba</button>
+						<button type="button" onclick="ocultar()"class="btn-lg btn-primary">Modo Concentracion</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col">
+		<div class="col" id="estadisticasOcultable">
 			<div class="container border">
-				<h1>Parte Puntos</h1>
-				<br> <br> <br> <br>
 				<br>
-				<br> <br> <br> <br>
-				<br>
-				<br>
-				<br>
+				<h1>
+					<u><em>Estadísticas</em></u>
+				</h1>
+
+				<br> <br> <br> <br> <br> <br> <br>
+				<br> <br> <br> <br> <br>
 			</div>
 
 		</div>
 	</div>
 	<div class="row"></div>
 
-		<script> 
-		var myVideo = document.getElementById("miVideo"); 
-		
-		function play() { 
-		  if (myVideo.paused) 
-		    myVideo.play(); 
-		} 
-		function pause(){
+	<script>
+		var modoOculto = false;
+		var myVideo = document.getElementById("miVideo");
+		var botones = document.getElementById("botones");
+		var fondo = document.getElementById("fondo");
+		var tituloOcultable = document.getElementById("tituloOcultable");
+		var estadisticasOcultable = document
+				.getElementById("estadisticasOcultable");
+
+		function play() {
+			if (myVideo.paused)
+				myVideo.play();
+		}
+		function pause() {
 			myVideo.pause();
 		}
-		function reiniciar(){
+		function reiniciar() {
 			myVideo.load();
 		}
-		function makeBig() { 
-		    myVideo.width = 900; 
-		} 
-		
-		function makeSmall() { 
-		    myVideo.width = 400; 
-		} 
-		
-		function makeNormal() { 
-		    myVideo.width = 420; 
-		} 
-		</script> 
+		function makeBig() {
+			myVideo.width = 1300;
+		}
+
+		function makeSmall() {
+			myVideo.width = 400;
+		}
+
+		function makeNormal() {
+			myVideo.width = 900;
+		}
+		function ocultar() {
+			if (modoOculto == false) {
+				modoOculto = true;
+				estadisticasOcultable.style.display = 'none';
+				tituloOcultable.style.display = 'none';
+				myVideo.width = 1000;
+				fondo.style = "background-color : black";
+			} else {
+				modoOculto = false;
+				estadisticasOcultable.style.display = 'block';
+				tituloOcultable.style.display = 'block';
+				myVideo.width = 900;
+				fondo.style = "background-color : white";
+
+			}
+		}
+	</script>
 
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->

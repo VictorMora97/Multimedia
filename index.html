@@ -21,8 +21,11 @@
 			<div class="container-fluid">
 				<h1 style="margin-top: 0.3em" id="tituloOcultable">
 					<u><em>Aqui va el titulo del video</em></u>
-					<button type="button" onclick="play()" style="margin-left: 4em"
-						class="btn-lg btn-primary">Play</button>
+					<button type="button" style="margin-left: 2em"
+						class="btn btn-primary rounded-circle" onclick="makeSmall()">-
+						zoom</button>
+					<button type="button" class="btn btn-primary rounded-circle"
+						onclick="makeBig()">+ zoom</button>
 				</h1>
 				<video style="margin-top: 0.3em" id="miVideo" width="900">
 					<source src="mov_bbb.mp4" type="video/mp4">
@@ -93,14 +96,14 @@
 			cuentaReinicios.innerHTML = contR++;
 			contP = 1;
 			cuentaPausa.innerHTML = 0;
-			
+
 		}
 		function makeBig() {
-			myVideo.width = 1300;
+			myVideo.width = myVideo.width + 40;
 		}
 
 		function makeSmall() {
-			myVideo.width = 400;
+			myVideo.width = myVideo.width - 40;
 		}
 
 		function makeNormal() {

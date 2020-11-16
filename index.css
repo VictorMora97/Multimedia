@@ -1,1 +1,26 @@
-@charset "ISO-8859-1";
+.fondo {
+	background-color: white;
+}
+
+.titulo {
+	margin: 0em 0em 0.3em 0.4em;
+	color: black;
+	text-align: left;
+}
+
+.titulo-est {
+	color: black;
+	text-align: center;
+} 
+
+.video {
+	margin-top: 0em;
+}
+
+.caja-controles{
+	margin-top: 0.5em;
+	margin-left: -1em;
+}
+.pad{
+	margin-left: 1.5em;
+}

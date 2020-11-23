@@ -55,8 +55,9 @@
 }
 
 .estadisticas {
+	margin-top: 1em;
 	background-color: #ebff5c;
-	height: 650px;
+	height: 680px;
 }
 
 .gif {

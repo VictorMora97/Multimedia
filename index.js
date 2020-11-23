@@ -22,9 +22,14 @@ var video = videojs('miVideo', {
 		fullscreenToggle : true,
 		playToggle : false,
 		remainingTimeDisplay : true,
+		durationDisplay : true,
 
 	}
 });
+video.removeChild('BigPlayButton');
+
+// var button = player.addChild('button');
+// console.log(button.el());
 
 // controlBar: {
 // children: [
@@ -37,8 +42,6 @@ var video = videojs('miVideo', {
 // "remainingTimeDisplay",
 // "fullscreenToggle"
 // ]
-
-video.removeChild('BigPlayButton');
 
 function play() {
 	if (myVideo.paused)

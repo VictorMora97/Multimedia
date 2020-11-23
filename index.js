@@ -22,7 +22,7 @@ var video = videojs('miVideo', {
 		fullscreenToggle : true,
 		playToggle : false,
 		remainingTimeDisplay : true,
-		durationDisplay : true,
+		durationDisplay : true
 
 	}
 });

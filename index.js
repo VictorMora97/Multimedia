@@ -53,8 +53,10 @@ video.on('click', function(evt) {
 // ]
 
 function play() {
-	if (myVideo.paused)
+	
+	if (myVideo.paused &&  mapaVisible == true){
 		myVideo.play();
+	}
 }
 function pause() {
 	if (!myVideo.paused) {
@@ -95,7 +97,7 @@ function mapa() {
 		document.getElementById("sinMapa").style.display = 'none';
 		document.getElementById("conMapa").style.display = 'block';
 		mapaVisible = false;
-	} else {
+	} else {	
 		document.getElementById("sinMapa").style.display = 'block';
 		document.getElementById("conMapa").style.display = 'none';
 		mapaVisible = true;
@@ -103,9 +105,9 @@ function mapa() {
 	}
 }
 
-function clm() {
+function cr() {
 	this.mapa();
-	this.ocultar();
+
 }
 
 function ocultar() {

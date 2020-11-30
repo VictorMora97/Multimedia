@@ -20,19 +20,19 @@
 
 <title>Reproductor</title>
 </head>
+
+			<!-- ZONA BODY-->
+
 <body id="fondo" class="container-fluid fondo" onload="mapa()">
-
-
 	<div class="container-fluid">
-
 		<div class="row">
 			<div class="col-lg-9">
 				<div class="container-fluid">
 					<h2 class="titulo" id="tituloOcultable">
-						<u><em>Aqui va el titulo del video</em></u>
+						<u><em>Castilla-La Mancha</em></u>
 					</h2>
 
-
+			<!-- ZONA CIUDAD REAL--->
 
 
 					<div id="sinMapa" class="container-fluid">
@@ -44,22 +44,29 @@
 
 
 					<div id="conMapa" class="container-fluid">
-						<img src="img/mapa.png" usemap="#workmap" width="700" height="550">
+						<img src="img/clm.png" usemap="#workmap" width="700" height="570">
 					</div>
 
 
+
+
+			<!-- ZONA WORKMAP -->
 					<map name="workmap">
-						<area onclick="clm()"
-							coords="297,159 322,159 350,175 376,173 378,191 371,203 399,231 388,258 395,271 409,292 394,300 391,314 351,329 337,307 246,316 220,300 224,283 238,278 231,257 215,255 199,228 227,221 268,224 264,239 321,225 300,184 "
-							shape="polygon">
+						<area onclick="cr()" coords="191,319 177,320 160,315 155,324 146,314 127,328 116,349 132,369 125,373 104,366 98,377 104,391 83,388 90,396 102,404 99,412 89,416 82,423 77,438 97,440 100,453 177,492 185,483 245,490 249,480 283,486 284,478 295,478 300,485 312,483 316,475 331,473 354,479 368,472 375,479 407,469 409,451 418,450 427,438 411,427 406,414 391,406 402,384 396,371 415,350 408,337 394,343 386,326 357,322 336,322 333,334 313,334 297,349 275,352 249,356 229,353 224,340 209,344 198,337 201,320 211,316 215,306 202,306 " shape="polygon">
 						<area shape="rect" coords="290,172,333,250" href="phone.htm">
 						<area shape="circle" coords="337,300,44" href="coffee.htm">
 					</map>
+   
+   
+   
+   
+
+			<!-- ZONA DE CONTROLES -->
 
 					<div class="col-lg-9 caja-controles" id="botones">
 						<div class="container">
 
-							<button type="button" onclick="clm()"
+							<button type="button" onclick="play()"
 								class="btn-lg btn-success relieveCaja padP">Play</button>
 							<button type="button" onclick="pause()"
 								class="btn-lg btn-danger relieveCaja padP">
@@ -83,15 +90,13 @@
 				</div>
 			</div>
 
+
+
+
 			<!-- ZONA ESTADISTICAS -->
 
-
 			<div class="col" id="estadisticasOcultable">
-
-
-
 				<div class="container1 border estadisticas">
-
 					<h1 class="titulo-est">Estadísticas</h1>
 					<br> <br> <br> <br> <br> <br> <br>
 					<br> <br> <br> <br> <br> <br> <br>
@@ -99,15 +104,11 @@
 					<!-- <img class="gif" src="giphy.gif" width> -->
 				</div>
 			</div>
-
-
 		</div>
-
-
 	</div>
 
 
-
+			<!-- ZONA SCRIPTS-->
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 

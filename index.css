@@ -55,9 +55,15 @@
 }
 
 .estadisticas {
-	margin-top: 1em;
+	margin-top: 3.3em;
+	margin-right: 2em;
 	background-color: #ebff5c;
-	height: 680px;
+	/* 	height: 46em; */
+
+}
+
+.container1 {
+ justify-content: space-around;
 }
 
 .gif {

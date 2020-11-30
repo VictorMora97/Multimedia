@@ -103,6 +103,11 @@ function mapa() {
 	}
 }
 
+function clm() {
+	this.mapa();
+	this.ocultar();
+}
+
 function ocultar() {
 	if (modoOculto == false) {
 		modoOculto = true;

@@ -44,12 +44,14 @@
 
 
 					<div id="conMapa" class="container-fluid">
-						<img src="img/mapa.png" width="700" height="550">
+						<img src="img/mapa.png" usemap="#workmap" width="700" height="550">
 					</div>
 
 
 					<map name="workmap">
-						<area shape="rect" coords="34,44,270,350" href="computer.htm">
+						<area onclick="clm()"
+							coords="297,159 322,159 350,175 376,173 378,191 371,203 399,231 388,258 395,271 409,292 394,300 391,314 351,329 337,307 246,316 220,300 224,283 238,278 231,257 215,255 199,228 227,221 268,224 264,239 321,225 300,184 "
+							shape="polygon">
 						<area shape="rect" coords="290,172,333,250" href="phone.htm">
 						<area shape="circle" coords="337,300,44" href="coffee.htm">
 					</map>
@@ -57,7 +59,7 @@
 					<div class="col-lg-9 caja-controles" id="botones">
 						<div class="container">
 
-							<button type="button" onclick="mapa()"
+							<button type="button" onclick="clm()"
 								class="btn-lg btn-success relieveCaja padP">Play</button>
 							<button type="button" onclick="pause()"
 								class="btn-lg btn-danger relieveCaja padP">

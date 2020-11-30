@@ -41,6 +41,10 @@
 	font-weight: 750;
 }
 
+.vjs-tech {
+	pointer-events: none;
+}
+
 .relieveTexto {
 	text-shadow: 2px 2px 5px blue;
 }
@@ -59,11 +63,10 @@
 	margin-right: 2em;
 	background-color: #ebff5c;
 	/* 	height: 46em; */
-
 }
 
 .container1 {
- justify-content: space-around;
+	justify-content: space-around;
 }
 
 .gif {

@@ -20,75 +20,90 @@
 
 <title>Reproductor</title>
 </head>
-<body id="fondo" class="container-fluid fondo">
+<body id="fondo" class="container-fluid fondo" onload="mapa()">
 
 
-<div class="container-fluid">
+	<div class="container-fluid">
 
-	<div class="row">
-		<div class="col-lg-9">
-			<div class="container-fluid">
-				<h2 class="titulo" id="tituloOcultable">
-					<u><em>Aqui va el titulo del video</em></u>
-				</h2>
-
-
+		<div class="row">
+			<div class="col-lg-9">
 				<div class="container-fluid">
-				
-					<video id="miVideo" class="video-js video" data-setup='{}'>
-						<source src="mov_bbb.mp4" type="video/mp4">
-					</video>
-				</div>
+					<h2 class="titulo" id="tituloOcultable">
+						<u><em>Aqui va el titulo del video</em></u>
+					</h2>
 
 
-				<div class="col-lg-9 caja-controles" id="botones">
-					<div class="container">
-
-						<button type="button" onclick="play()"
-							class="btn-lg btn-success relieveCaja padP">Play</button>
-						<button type="button" onclick="pause()"
-							class="btn-lg btn-danger relieveCaja padP">
-							Pausa <span id="cuentaPausa" class="badge badge-light"> 0
-							</span>
-						</button>
-						<button type="button" onclick="reiniciar()"
-							class="btn-lg btn-warning pad relieveCaja">
-							Reiniciar Prueba <span id="cuentaReinicios"
-								class="badge badge-light"> 0 </span>
-						</button>
-						<button type="button" onclick="ocultar()"
-							class="btn-lg btn-primary relieveCaja padP">
-							Modo Concentracion <span id="estadoModo"
-								class="badge badge-light">OFF</span>
-						</button>
 
 
+					<div id="sinMapa" class="container-fluid">
+						<video id="miVideo" class="video-js video" onclick=""
+							data-setup='{}'>
+							<source src="mov_bbb.mp4" type="video/mp4">
+						</video>
+					</div>
+
+
+					<div id="conMapa" class="container-fluid">
+						<img src="img/mapa.png" width="700" height="550">
+					</div>
+
+
+					<map name="workmap">
+						<area shape="rect" coords="34,44,270,350" href="computer.htm">
+						<area shape="rect" coords="290,172,333,250" href="phone.htm">
+						<area shape="circle" coords="337,300,44" href="coffee.htm">
+					</map>
+
+					<div class="col-lg-9 caja-controles" id="botones">
+						<div class="container">
+
+							<button type="button" onclick="mapa()"
+								class="btn-lg btn-success relieveCaja padP">Play</button>
+							<button type="button" onclick="pause()"
+								class="btn-lg btn-danger relieveCaja padP">
+								Pausa <span id="cuentaPausa" class="badge badge-light"> 0
+								</span>
+							</button>
+							<button type="button" onclick="reiniciar()"
+								class="btn-lg btn-warning pad relieveCaja">
+								Reiniciar Prueba <span id="cuentaReinicios"
+									class="badge badge-light"> 0 </span>
+							</button>
+							<button type="button" onclick="ocultar()"
+								class="btn-lg btn-primary relieveCaja padP">
+								Modo Concentracion <span id="estadoModo"
+									class="badge badge-light">OFF</span>
+							</button>
+
+
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- ZONA ESTADISTICAS -->
-				
-		
-		<div class="col" id="estadisticasOcultable">
-					
-				
-				
-			<div class="container1 border estadisticas">
+			<!-- ZONA ESTADISTICAS -->
 
-				<h1 class="titulo-est">Estadísticas</h1>
 
-				<!-- <img class="gif" src="giphy.gif" width> -->
+			<div class="col" id="estadisticasOcultable">
+
+
+
+				<div class="container1 border estadisticas">
+
+					<h1 class="titulo-est">Estadísticas</h1>
+					<br> <br> <br> <br> <br> <br> <br>
+					<br> <br> <br> <br> <br> <br> <br>
+					<br> <br> <br> <br> <br> <br> <br>
+					<!-- <img class="gif" src="giphy.gif" width> -->
+				</div>
 			</div>
+
+
 		</div>
-		
-		
-		</div>
-		
-		
+
+
 	</div>
-		
+
 
 
 

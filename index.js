@@ -1,4 +1,7 @@
 var modoOculto = false;
+
+var mapaVisible = true;
+
 var myVideo = document.getElementById("miVideo");
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
@@ -27,6 +30,12 @@ var video = videojs('miVideo', {
 	}
 });
 video.removeChild('BigPlayButton');
+
+video.on('click', function(evt) {
+	if (evt.target.tagName === 'VIDEO') {
+		console.log('video was clicked');
+	}
+});
 
 // var button = player.addChild('button');
 // console.log(button.el());
@@ -58,6 +67,8 @@ function reiniciar() {
 	cuentaReinicios.innerHTML = contR++;
 	contP = 1;
 	cuentaPausa.innerHTML = 0;
+	mapaVisible = true;
+	mapa();
 
 }
 function makeBig() {
@@ -77,6 +88,19 @@ function acelerar() {
 }
 function frenar() {
 	myVideo.playbackRate = 1.0;
+}
+
+function mapa() {
+	if (mapaVisible == true) {
+		document.getElementById("sinMapa").style.display = 'none';
+		document.getElementById("conMapa").style.display = 'block';
+		mapaVisible = false;
+	} else {
+		document.getElementById("sinMapa").style.display = 'block';
+		document.getElementById("conMapa").style.display = 'none';
+		mapaVisible = true;
+
+	}
 }
 
 function ocultar() {

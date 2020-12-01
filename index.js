@@ -96,17 +96,22 @@ function mapa() {
 	if (mapaVisible == true) {
 		document.getElementById("sinMapa").style.display = 'none';
 		document.getElementById("conMapa").style.display = 'block';
+		this.tituloPrincipal();
 		mapaVisible = false;
 	} else {	
 		document.getElementById("sinMapa").style.display = 'block';
 		document.getElementById("conMapa").style.display = 'none';
 		mapaVisible = true;
-
 	}
+}
+function tituloPrincipal(){
+	tituloOcultable.innerHTML = "<u><em>Selecciona una provincia para empezar</em></u>";
 }
 
 function cr() {
 	this.mapa();
+	tituloOcultable.innerHTML = "<u><em>Ciudad Real</em></u>";
+	
 
 }
 

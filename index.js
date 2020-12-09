@@ -115,6 +115,10 @@ function cr() {
 
 }
 
+function alerta(){
+alert("Elige una provincia de Castilla-La Mancha")
+}
+
 function ocultar() {
 	if (modoOculto == false) {
 		modoOculto = true;

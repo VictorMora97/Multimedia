@@ -54,7 +54,7 @@ video.on('click', function(evt) {
 
 function play() {
 	
-	if (myVideo.paused &&  mapaVisible == true){
+	if (myVideo.paused && mapaVisible == true){
 		myVideo.play();
 	}
 }
@@ -70,19 +70,10 @@ function reiniciar() {
 	contP = 1;
 	cuentaPausa.innerHTML = 0;
 	mapaVisible = true;
-	mapa();
-
-}
-function makeBig() {
-	myVideo.width = myVideo.width + 40;
-}
-
-function makeSmall() {
-	myVideo.width = myVideo.width - 40;
-}
-
-function makeNormal() {
-	myVideo.width = 900;
+	if(modoOculto==true){
+		ocultar();
+	}
+	inicio();
 }
 
 function acelerar() {
@@ -92,27 +83,30 @@ function frenar() {
 	myVideo.playbackRate = 1.0;
 }
 
-function mapa() {
-	if (mapaVisible == true) {
-		document.getElementById("sinMapa").style.display = 'none';
-		document.getElementById("conMapa").style.display = 'block';
-		this.tituloPrincipal();
-		mapaVisible = false;
-	} else {	
-		document.getElementById("sinMapa").style.display = 'block';
-		document.getElementById("conMapa").style.display = 'none';
-		mapaVisible = true;
-	}
+function inicio(){
+	document.getElementById("conMapa").style.display = 'block';
+	document.getElementById("CR").style.display = 'none';
+	document.getElementById("ALB").style.display = 'none';
+	document.getElementById("TO").style.display = 'none';
+	document.getElementById("GDJ").style.display = 'none';
+	this.tituloPrincipal();
 }
+
+
 function tituloPrincipal(){
 	tituloOcultable.innerHTML = "<u><em>Selecciona una provincia para empezar</em></u>";
 }
 
 function cr() {
-	this.mapa();
-	tituloOcultable.innerHTML = "<u><em>Ciudad Real</em></u>";
-	
 
+	document.getElementById("CR").style.display = 'block';
+	document.getElementById("conMapa").style.display = 'none';
+	tituloOcultable.innerHTML = "<u><em>Ciudad Real</em></u>"
+}
+function alb() {
+	document.getElementById("ALB").style.display = 'block';
+	document.getElementById("conMapa").style.display = 'none';
+	tituloOcultable.innerHTML = "<u><em>Albacete</em></u>"
 }
 
 function alerta(){

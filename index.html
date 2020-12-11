@@ -7,7 +7,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
-<link rel='stylesheet' href='index.css'>
+<link rel='stylesheet' href='css/index.css'>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
 <script
@@ -18,77 +18,49 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
-<title>Reproductor</title>
+<title>Castilla-La Mancha</title>
 </head>
 
 <!-- ZONA BODY-->
 
-<body id="fondo" class="container-fluid fondo" onload="inicio()">
+<body id="fondo" class="container-fluid fondo">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-9">
 				<div class="container-fluid">
-					<h2 class="titulo" id="tituloOcultable">
+					<h2 class="titulo">
 						<u><em>Selecciona una provincia para empezar</em></u>
 					</h2>
 
 
-
-
-					<!-- ZONA CIUDAD REAL--->
-
-					<div id="CR" class="container-fluid">
-						<video id="miVideoCR" class="video-js video" onclick=""
-							poster="img/CR.png" data-setup='{}'>
-							<source src="mov_bbb.mp4" type="video/mp4">
-						</video>
-					</div>
-
-					<!-- ZONA ALBACETE--->
-
-					<div id="ALB" class="container-fluid">
-						<video id="miVideoALB" class="video-js video" onclick=""
-							poster="img/ALB.png" data-setup='{}'>
-							<source src="mov_bbb.mp4" type="video/mp4">
-						</video>
-					</div>
-
-
-
-
 					<!-- ZONA WORKMAP -->
 
-					<div id="conMapa" class="container-fluid">
+					<div class="container-fluid">
 						<img src="img/clm.png" usemap="#workmap" width="700" height="570">
 					</div>
 
 					<map name="workmap">
-						<area onclick="cr()"
+						<area
 							coords="191,319 177,320 160,315 155,324 146,314 127,328 116,349 132,369 125,373 104,366 98,377 104,391 83,388 90,396 102,404 99,412 89,416 82,423 77,438 97,440 100,453 177,492 185,483 245,490 249,480 283,486 284,478 295,478 300,485 312,483 316,475 331,473 354,479 368,472 375,479 407,469 409,451 418,450 427,438 411,427 406,414 391,406 402,384 396,371 415,350 408,337 394,343 386,326 357,322 336,322 333,334 313,334 297,349 275,352 249,356 229,353 224,340 209,344 198,337 201,320 211,316 215,306 202,306 "
-							shape="polygon">
+							shape="polygon" href="ciudadreal.html">
 
-						<area onclick="alb()"
+						<area
 							coords="417,346 422,352 403,372 408,390 398,402 414,411 418,424 431,434 431,445 428,453 417,457 417,467 440,470 444,484 457,492 460,504 464,520 450,539 474,548 497,515 522,501 532,506 570,489 581,500 604,493 602,462 607,457 617,439 629,441 654,430 675,446 689,443 686,406 653,408 639,378 653,347 603,329 562,349 531,348 522,340 515,337 519,354 504,352 485,359 479,351 470,359 450,342 434,341 "
-							shape="polygon">
+							shape="polygon" href="albacete.html">
 					</map>
-
-
 
 
 					<!-- ZONA DE CONTROLES -->
 
-					<div class="col-lg-9 caja-controles" id="botones">
+					<div class="col-lg-13 caja-controles" id="botones">
 						<div class="container">
 
-							<button type="button" onclick="play()"
-								class="btn-lg btn-success relieveCaja padP">Play</button>
-							<button type="button" onclick="pause()"
-								class="btn-lg btn-danger relieveCaja padP">
+							<button type="button" class="btn-lg btn-success relieveCaja padI">Play</button>
+							<button type="button" class="btn-lg btn-danger relieveCaja padP">
 								Pausa <span id="cuentaPausa" class="badge badge-light"> 0
 								</span>
 							</button>
-							<button type="button" onclick="reiniciar()"
-								class="btn-lg btn-warning pad relieveCaja">
+							<button type="button" class="btn-lg btn-warning pad relieveCaja">
 								Reiniciar Prueba <span id="cuentaReinicios"
 									class="badge badge-light"> 0 </span>
 							</button>
@@ -106,38 +78,21 @@
 
 
 
-			<!-- ZONA ESTADISTICAS -->
+			<!-- ZONA SCRIPTS-->
 
-			<div class="col" id="estadisticasOcultable">
-				<div class="container1 border estadisticas">
-					<h1 class="titulo-est">Estadísticas</h1>
-					<br> <br> <br> <br> <br> <br> <br>
-					<br> <br> <br> <br> <br> <br> <br>
-					<br> <br> <br> <br> <br> <br> <br>
-					<!-- <img class="gif" src="giphy.gif" width> -->
-				</div>
-			</div>
-		</div>
-	</div>
+			<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+				integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+				crossorigin="anonymous"></script>
 
-	<!-- ZONA SCRIPTS-->
+			<script
+				src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+				crossorigin="anonymous"></script>
 
-	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+			<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-		crossorigin="anonymous"></script>
-
-	<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-
-	<script src="js/index.js"></script>
-	<script src="index.js"></script>
-
+			<script src="index.js"></script>
 </body>
 </html>

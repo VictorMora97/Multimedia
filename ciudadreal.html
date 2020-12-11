@@ -23,7 +23,7 @@
 
 <!-- ZONA BODY-->
 
-<body id="fondo" class="container-fluid fondo" onload="inicio()">
+<body id="fondo" class="container-fluid fondo" onload="cronometro()">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-9">
@@ -82,11 +82,12 @@
 			<div class="col" id="estadisticasOcultable">
 				<div class="container1 border estadisticas">
 					<h1 class="titulo-est">Puntuación</h1>
-					<br> <b class="padPt">Penalización: - </b> <br> <b
-						class="padPt">Nº de pausas: -</b> <br> <br> <b
-						class="padPt">Nº de aciertos: -</b> <br> <b class="padPt">Nº
-						de fallos: -</b> <br> <br> <b class="padPt">Tiempo: -</b> <br>
-					<br> <br> <b class="padPt">NOTA: -</b> <br> <br>
+					<br> <b class="padPt">Penalización: </b><b id="penalizacion">-</b>
+					<br> <b class="padPt">Nº de pausas: </b> <b id="pausas">-</b><br>
+					<br> <b class="padPt">Nº de aciertos: </b> <b id="aciertos">-</b><br>
+					<b class="padPt">Nº de fallos: </b> <b id="fallos">-</b><br> <br>
+					<b class="padPt">Tiempo: </b><b id="tiempo">-</b> <br> <br>
+					<br> <b class="padPt">NOTA: </b> <b id="nota">-</b><br> <br>
 					<br> <br> <img src="img/bien.png" class="imgPuntos"
 						height="150"> <br>
 					<!-- <img class="gif" src="giphy.gif" width> -->

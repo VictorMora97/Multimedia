@@ -5,9 +5,12 @@ var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
 var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
-//var estadisticasOcultable = document.getElementById("estadisticasOcultable");
+var tiempo = document.getElementById("tiempo");
+// var estadisticasOcultable = document.getElementById("estadisticasOcultable");
 var contR = 1;
 var contP = 1;
+var empezado = false;
+var segundos = 0;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -23,8 +26,28 @@ var videoCR = videojs('miVideoCR', {
 });
 videoCR.removeChild('BigPlayButton');
 
-function play() {
+setInterval(cronometro, 1000);
+function cronometro() {
+	comprobacionPlay();
+	if (empezado == true) {
+		segundos += 1;
+		tiempo.innerText = segundos + " segundos";
+	}
+}
 
+function comprobacionPlay() {
+	if (empezado == false && !myVideoCR.paused) {
+		empezado = true;
+		segundos = segundos - 1;
+		cronometro();
+	}
+}
+
+function play() {
+	if (empezado == false) {
+		empezado = true;
+		cronometro();
+	}
 	if (myVideoCR.paused) {
 		myVideoCR.play();
 	}

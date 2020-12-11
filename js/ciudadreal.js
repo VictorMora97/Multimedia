@@ -15,6 +15,8 @@ var tiempo = document.getElementById("tiempo");
 // var estadisticasOcultable = document.getElementById("estadisticasOcultable");
 var contR = 1;
 var contP = 1;
+var contAciertos = 0;
+var contFallos = 0;
 var empezado = false;
 var segundos = 0;
 
@@ -31,18 +33,6 @@ var videoCR = videojs('miVideoCR', {
 	}
 });
 videoCR.removeChild('BigPlayButton');
-
-
-function cuestiones() {
-	var txt;
-	var person = prompt("¿Como se llama la alcaldesa de Ciudad Real?", "");
-	if (person == null || person == "") {
-		alert("INCORRECTO\nRespuesta correcta: Pilar Zamora");
-	} else {
-		//txt = "Hello " + person + "! How are you today?";
-	}
-	document.getElementById("demo").innerHTML = txt;
-}
 
 setInterval(cronometro, 1000);
 function cronometro() {
@@ -61,13 +51,8 @@ function comprobacionPlay() {
 	}
 }
 
-
-	$('#myModal').modal('show'); 
-
-
 function play() {
-	
-	
+
 	if (empezado == false) {
 		empezado = true;
 		cronometro();
@@ -110,3 +95,25 @@ function ocultar() {
 		fondo.style = "background-color : white";
 	}
 }
+
+//---------------------------------------------------------------------
+
+function enviar() {
+	var respuesta = document.getElementById("respuesta").value;
+	if (respuesta == "hola" || respuesta == "Hola" || respuesta == "HOLA") {
+		contAciertos++;
+		aciertos.innerHTML = contAciertos;
+		document.getElementById("respuesta").value = "";
+
+	} else {
+		contFallos++;
+		fallos.innerHTML = contFallos;
+		document.getElementById("respuesta").value = "";
+
+	}
+
+}
+
+//$(window).on('load', function() {
+//	$('#myModal').modal('show');
+//});

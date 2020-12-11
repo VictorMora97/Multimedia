@@ -9,8 +9,14 @@
 	background-color: #daffa7;
 }
 .enviar{
-	box-shadow: 4px 4px 6px green;
+	box-shadow: 4px 4px 6px blue;
+}
+.repetir{
+	box-shadow: 4px 4px 6px blue;
 }
 .titulo{
 	
+}
+.fondo {
+	background-color: white;
 }

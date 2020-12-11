@@ -53,14 +53,14 @@
 							poster="img/CR.png" data-setup='{}'>
 							<source src="img/mov_bbb.mp4" type="video/mp4">
 						</video>
-					</div>					
+					</div>				
 
 					<!-- ZONA DE CONTROLES -->
 
 					<div class="col-lg-12 caja-controles" id="botones">
 						<button type="button" onclick="play()" 
 							class="btn-lg btn-success relieveCaja padI">Play</button>
-						<button type="button" onclick="pause()" data-toggle="modal" data-target="#myModal1"
+						<button type="button" onclick="pause()" data-toggle="modal" data-target="#myModal"
 							class="btn-lg btn-danger relieveCaja padP">
 							Pausa <span id="cuentaPausa" class="badge badge-light"> 0
 							</span>
@@ -104,20 +104,26 @@
   <!-- PRIMER MODAL: RELLENAR INFO -->
   <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
 
-  <!-- Modal -->
-  	<div class="modal fade" id="myModal1" role="dialog">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header cabecera">
 
-				<h4 class="modal-title titulo">¿Es esto una pregunta sobre el video?</h4>
+					<h4 id="titulo" class="modal-title titulo">¿Es esto una
+						pregunta sobre el video?</h4>
 				</div>
-				<div class="modal-body cuerpo"> <p>Informacion del modal</p>
+				<div class="modal-body cuerpo">
+					<p>Informacion del modal</p>
+					<input type="text" class="form-control" id="respuesta">
 				</div>
 				<div class="modal-footer pie">
-					<button type="button" class="btn btn-success enviar" data-dismiss="modal">Enviar Respuesta</button>
+					<button type="button" class="btn btn-danger repetir"
+						data-dismiss="modal">Repetir fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar()">Enviar Respuesta</button>
 				</div>
 			</div>
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form Rellenar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href='modals.css'>
+</head>
+<body>
+
+	<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+		data-target="#myModal">Open Modal</button> -->
+	<!-- Trigger the modal with a button -->
+	<h1 id="prueba">sin nada</h1>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+
+					<h4 id="titulo" class="modal-title titulo">¿Es esto una
+						pregunta sobre el video?</h4>
+				</div>
+				<div class="modal-body cuerpo">
+					<p>Informacion del modal</p>
+					<input type="text" class="form-control" id="respuesta">
+				</div>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-danger repetir"
+						data-dismiss="modal">Repetir fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar()">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		function enviar() {
+			var respuesta = document.getElementById("respuesta").value;
+			if (respuesta == "hola" || respuesta == "Hola"
+					|| respuesta == "HOLA") {
+				prueba.innerHTML = "correcto";
+			} else {
+				prueba.innerHTML = "INcorrecto";
+			}
+			document.getElementById("respuesta").value = "";
+
+		}
+
+		$(window).on('load', function() {
+			$('#myModal').modal('show');
+		});
+	</script>
+
+
+	<script src="js/ciudadreal.js"></script>
+</body>
+</html>

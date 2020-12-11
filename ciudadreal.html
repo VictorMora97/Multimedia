@@ -10,6 +10,13 @@
 <link rel='stylesheet' href='css/index.css'>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <script
 	src="https://cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.4/dist/videojs-hls-quality-selector.cjs.min.js"></script>
 <!-- Bootstrap CSS -->
@@ -33,9 +40,13 @@
 					</h2>
 
 
-
+					<!-- <iframe src="form.html" height="200" width="300" title="Iframe Example"></iframe> -->
 
 					<!-- ZONA CIUDAD REAL--->
+
+					<!-- 					<div id="area" class="container-fluid">				
+					<iframe id="form" src="form.html" height="200" width="300" title="Iframe Example"></iframe>
+					</div> -->
 
 					<div id="CR" class="container-fluid">
 						<video id="miVideoCR" class="video-js video" onclick=""
@@ -51,7 +62,7 @@
 					<div class="col-lg-13 caja-controles" id="botones">
 						<div class="container">
 
-							<button type="button" onclick="play()"
+							<button type="button" onclick="play()" data-target="#modal"
 								class="btn-lg btn-success relieveCaja padI">Play</button>
 							<button type="button" onclick="pause()"
 								class="btn-lg btn-danger relieveCaja padP">

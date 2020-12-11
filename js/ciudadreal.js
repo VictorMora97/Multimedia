@@ -7,6 +7,11 @@ var pausasPuntos = document.getElementById("pausas");
 var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
+
+//var form = document.getElementById("form");
+//var areaForm = document.getElementById("area");
+//var areaVideo = document.getElementById("mi");
+
 // var estadisticasOcultable = document.getElementById("estadisticasOcultable");
 var contR = 1;
 var contP = 1;
@@ -26,6 +31,17 @@ var videoCR = videojs('miVideoCR', {
 	}
 });
 videoCR.removeChild('BigPlayButton');
+
+function cuestiones() {
+	var txt;
+	var person = prompt("¿Como se llama la alcaldesa de Ciudad Real?", "");
+	if (person == null || person == "") {
+		alert("INCORRECTO\nRespuesta correcta: Pilar Zamora");
+	} else {
+		//txt = "Hello " + person + "! How are you today?";
+	}
+	document.getElementById("demo").innerHTML = txt;
+}
 
 setInterval(cronometro, 1000);
 function cronometro() {

@@ -113,7 +113,7 @@ function alb() {
 }
 
 function alerta() {
-	alert("Elige una provincia de Castilla-La Mancha")
+	alert("Elige una provincia de Castilla-La Mancha");
 }
 
 function ocultar() {

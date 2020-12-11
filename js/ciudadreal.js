@@ -103,6 +103,7 @@ function enviar() {
 	if (respuesta == "hola" || respuesta == "Hola" || respuesta == "HOLA") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
+
 		document.getElementById("respuesta").value = "";
 
 	} else {
@@ -111,7 +112,10 @@ function enviar() {
 		document.getElementById("respuesta").value = "";
 
 	}
+}
 
+function repetir() {
+	videoCR.currentTime(5);
 }
 
 //$(window).on('load', function() {

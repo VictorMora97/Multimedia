@@ -18,7 +18,7 @@ var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var segundos = 0;
+var segundos =-3;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -103,19 +103,19 @@ function enviar() {
 	if (respuesta == "hola" || respuesta == "Hola" || respuesta == "HOLA") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
-
 		document.getElementById("respuesta").value = "";
-
+		myVideoCR.play();
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta").value = "";
-
+		myVideoCR.play();
 	}
 }
 
 function repetir() {
 	videoCR.currentTime(5);
+	myVideoCR.play();
 }
 
 //$(window).on('load', function() {

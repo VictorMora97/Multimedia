@@ -9,7 +9,7 @@ var fondo = document.getElementById("fondo");
 var contR = 1;
 var contP = 1;
 
-var videoCR = videojs('miVideoALB', {
+var videoALB = videojs('miVideoALB', {
 	fluid : true,
 	loop : false,
 	controls : true,
@@ -21,7 +21,7 @@ var videoCR = videojs('miVideoALB', {
 		playToggle : false,
 	}
 });
-videoCR.removeChild('BigPlayButton');
+videoALB.removeChild('BigPlayButton');
 
 function play() {
 

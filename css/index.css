@@ -29,6 +29,9 @@
 .padP {
 	margin-left: 0.3em;
 }
+.padPt{
+	margin-left: 0.6em;
+}
 
 .padI {
 	margin-left: 0.8em;
@@ -51,6 +54,12 @@
 
 .relieveTexto {
 	text-shadow: 2px 2px 5px blue;
+}
+
+.imgPuntos {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .relieveCaja {

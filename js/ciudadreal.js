@@ -32,6 +32,7 @@ var videoCR = videojs('miVideoCR', {
 });
 videoCR.removeChild('BigPlayButton');
 
+
 function cuestiones() {
 	var txt;
 	var person = prompt("¿Como se llama la alcaldesa de Ciudad Real?", "");
@@ -60,7 +61,13 @@ function comprobacionPlay() {
 	}
 }
 
+
+	$('#myModal').modal('show'); 
+
+
 function play() {
+	
+	
 	if (empezado == false) {
 		empezado = true;
 		cronometro();

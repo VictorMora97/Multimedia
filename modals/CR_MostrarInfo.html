@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<title>Form Rellenar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href='modals.css'>
+</head>
 <body>
 
-<h1>The form element</h1>
+	<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+		data-target="#myModal">Open Modal</button> -->
+	<!-- Trigger the modal with a button -->
 
-<form action="/action_page.php">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit">
-</form>
 
-<p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
 
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+
+				<h4 class="modal-title titulo">¿Es esto una pregunta sobre el video?</h4>
+				</div>
+				<div class="modal-body cuerpo"> <p>Informacion del modal</p>
+				</div>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-success enviar" data-dismiss="modal">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	
+
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
+
+
+	<script src="js/ciudadreal.js"></script>
 </body>
 </html>

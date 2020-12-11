@@ -3,6 +3,7 @@ var myVideoCR = document.getElementById("miVideoCR");
 
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
+var pausasPuntos = document.getElementById("pausas");
 var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
@@ -57,6 +58,8 @@ function pause() {
 	if (!myVideoCR.paused) {
 		myVideoCR.pause();
 		cuentaPausa.innerHTML = contP++;
+		pausasPuntos.innerHTML = cuentaPausa.innerHTML;
+
 	}
 }
 

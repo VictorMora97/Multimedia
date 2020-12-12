@@ -1,6 +1,7 @@
 var modoOculto = false;
 var myVideoCR = document.getElementById("miVideoCR");
 
+var penalizacion = document.getElementById("penalizacion");
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
 var pausasPuntos = document.getElementById("pausas");
@@ -8,17 +9,13 @@ var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
 
-//var form = document.getElementById("form");
-//var areaForm = document.getElementById("area");
-//var areaVideo = document.getElementById("mi");
-
-// var estadisticasOcultable = document.getElementById("estadisticasOcultable");
 var contR = 1;
 var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var segundos = -3;
+var segundos = -1;
+var faseVideo = 0;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -96,19 +93,38 @@ function ocultar() {
 	}
 }
 
-//-----MODAL1----------------------------------------------------------------
+setInterval(paradasModal1, 10);
+function paradasModal1() {
+	penalizacion.innerHTML = videoCR.currentTime();
+	if (videoCR.currentTime() > '2' && faseVideo == 0) {
+		$('#myModal1').modal('show');
+		faseVideo = 1;
+		myVideoCR.pause();
+	}
+}
+
+setInterval(paradasModal2, 10);
+function paradasModal2() {
+	if (videoCR.currentTime() > '4' && faseVideo == 1) {
+		$('#myModal2').modal('show');
+		faseVideo = 2;
+		myVideoCR.pause();
+	}
+}
+
+// -----MODAL1----------------------------------------------------------------
 
 function enviar1() {
 	var respuesta1 = document.getElementById("respuesta1").value;
-	if (respuesta == "hola" || respuesta == "Hola" || respuesta == "HOLA") {
+	if (respuesta1 == "hola" || respuesta1 == "Hola" || respuesta1 == "HOLA") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
-		document.getElementById("respuesta").value = "";
+		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
-		document.getElementById("respuesta").value = "";
+		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
 	}
 }
@@ -117,7 +133,7 @@ function repetir1() {
 	videoCR.currentTime(5);
 	myVideoCR.play();
 }
-//------MODAL2---------------------------------------------------------------
+// ------MODAL2---------------------------------------------------------------
 
 function enviar2() {
 	var respuestaC = document.getElementById("correcta").checked;
@@ -140,6 +156,6 @@ function repetir2() {
 	myVideoCR.play();
 }
 
-//$(window).on('load', function() {
-//	$('#myModal').modal('show');
-//});
+// $(window).on('load', function() {
+// $('#myModal').modal('show');
+// });

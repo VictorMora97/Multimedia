@@ -18,7 +18,7 @@ var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var segundos =-3;
+var segundos = -3;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -96,10 +96,10 @@ function ocultar() {
 	}
 }
 
-//---------------------------------------------------------------------
+//-----MODAL1----------------------------------------------------------------
 
-function enviar() {
-	var respuesta = document.getElementById("respuesta").value;
+function enviar1() {
+	var respuesta1 = document.getElementById("respuesta1").value;
 	if (respuesta == "hola" || respuesta == "Hola" || respuesta == "HOLA") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
@@ -113,8 +113,30 @@ function enviar() {
 	}
 }
 
-function repetir() {
+function repetir1() {
 	videoCR.currentTime(5);
+	myVideoCR.play();
+}
+//------MODAL2---------------------------------------------------------------
+
+function enviar2() {
+	var respuestaC = document.getElementById("correcta").checked;
+	if (respuestaC == true) {
+		contAciertos++;
+		aciertos.innerHTML = contAciertos;
+		document.getElementById("correcta").checked = false;
+		myVideoCR.play();
+	} else {
+		contFallos++;
+		fallos.innerHTML = contFallos;
+		document.getElementById("inc1").checked = false;
+		document.getElementById("inc2").checked = false;
+		myVideoCR.play();
+	}
+}
+
+function repetir2() {
+	videoCR.currentTime(15);
 	myVideoCR.play();
 }
 

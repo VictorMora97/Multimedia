@@ -61,7 +61,7 @@
 						<button type="button" onclick="play()"
 							class="btn-lg btn-success relieveCaja padI">Play</button>
 						<button type="button" onclick="pause()" data-toggle="modal"
-							data-target="#myModal1"
+							data-target="#myModal2"
 							class="btn-lg btn-danger relieveCaja padP">
 							Pausa <span id="cuentaPausa" class="badge badge-light"> 0
 							</span>
@@ -103,7 +103,7 @@
 	<!----------------------------------------------------------------------------------->
 
 	<!-- PRIMER MODAL: RELLENAR INFO -->
-	<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal1">Open Modal</button> -->
 
 	<!-- Modal -->
 	<div class="modal fade" id="myModal1" role="dialog">
@@ -118,14 +118,53 @@
 				</div>
 				<div class="modal-body cuerpo">
 					<p>Informacion del modal</p>
-					<input type="text" class="form-control" id="respuesta">
+					<input type="text" class="form-control" id="respuesta1">
 				</div>
 				<div class="modal-footer pie">
 					<button type="button" class="btn btn-danger repetir"
-						onclick="repetir()" data-dismiss="modal">Repetir
+						onclick="repetir1()" data-dismiss="modal">Repetir
 						fragmento</button>
 					<button type="submit" class="btn btn-success enviar"
-						data-dismiss="modal" onclick="enviar()">Enviar Respuesta</button>
+						data-dismiss="modal" onclick="enviar1()">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!----------------------------------------------------------------------------------->
+
+	<!-- SEGUNDO MODAL: RELLENAR INFO -->
+	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal2">Open Modal</button> -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+					<h4 class="modal-title titulo">¿Es esto una pregunta sobre el
+						video 2?</h4>
+				</div>
+				<div class="radio radioBotones">
+					<label><input id="correcta" type="radio" name="optradio"
+						checked> Correcta</label>
+				</div>
+				<div class="radio  radioBotones">
+					<label><input id="inc1" type="radio" name="optradio">
+						Option 2</label>
+				</div>
+				<div class="radio  radioBotones">
+					<label><input id="inc2" type="radio" name="optradio">
+						Option 3</label>
+				</div>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-danger repetir"
+						data-dismiss="modal" onclick="repetir2()">Repetir
+						fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar2()">Enviar Respuesta</button>
 				</div>
 			</div>
 
@@ -134,6 +173,7 @@
 
 
 	<!----------------------------------------------------------------------------------->
+
 	<!-- ZONA SCRIPTS-->
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 

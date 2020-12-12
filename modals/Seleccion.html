@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form Seleccionar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href='modals.css'>
+</head>
+<body>
+	<h1 id="testeo">sin respuesta</h1>
+	<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+		data-target="#myModal">Open Modal</button> -->
+	<!-- Trigger the modal with a button -->
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+					<h4 class="modal-title titulo">¿Es esto una pregunta sobre el
+						video?</h4>
+				</div>
+				<div class="radio radioBotones">
+					<label><input id="correcta" type="radio" name="optradio"
+						checked>correcta</label>
+				</div>
+				<div class="radio  radioBotones">
+					<label><input id="inc1" type="radio" name="optradio">Option
+						2</label>
+				</div>
+				<div class="radio  radioBotones">
+					<label><input id="inc2" type="radio" name="optradio">Option
+						3</label>
+				</div>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-danger repetir"
+						data-dismiss="modal">Repetir fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar()">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<script>
+		function enviar() {
+			var respuestaC = document.getElementById("correcta").checked;
+			if (respuestaC == true) {
+				document.getElementById("testeo").innerHTML = "correcto";
+				document.getElementById("correcta").checked = false;
+			} else {
+				document.getElementById("testeo").innerHTML = "INcorrecto";
+				document.getElementById("inc1").checked = false;
+				document.getElementById("inc2").checked = false;
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		$(window).on('load', function() {
+			$('#myModal').modal('show');
+		});
+	</script>
+
+
+
+
+	<script src="js/ciudadreal.js"></script>
+</body>
+</html>

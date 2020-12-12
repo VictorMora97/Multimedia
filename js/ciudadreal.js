@@ -8,13 +8,16 @@ var pausasPuntos = document.getElementById("pausas");
 var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
+var tiempoPrueba = document.getElementById("tiempoPrueba");
+// var julioCesar = document.getElementById("imgPuntos");
 
+var aprobacion = 1;
 var contR = 1;
 var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var segundos = -1;
+var ms = -20;
 var faseVideo = 0;
 
 var videoCR = videojs('miVideoCR', {
@@ -31,25 +34,15 @@ var videoCR = videojs('miVideoCR', {
 });
 videoCR.removeChild('BigPlayButton');
 
-setInterval(cronometro, 1000);
-function cronometro() {
-	comprobacionPlay();
-	if (empezado == true) {
-		segundos += 1;
-		tiempo.innerText = segundos + " segundos";
-	}
-}
-
 function comprobacionPlay() {
 	if (empezado == false && !myVideoCR.paused) {
 		empezado = true;
-		segundos = segundos - 1;
+		// segundos = segundos - 1;
 		cronometro();
 	}
 }
 
 function play() {
-
 	if (empezado == false) {
 		empezado = true;
 		cronometro();
@@ -93,10 +86,26 @@ function ocultar() {
 	}
 }
 
+setInterval(cronometro, 1000);
+function cronometro() {
+	if (empezado == true) {
+		ms = ms + 1;
+		tiempoPrueba.innerHTML = ms.toFixed(0);
+	}
+}
+
+// setInterval(aprobado, 1000);
+// function aprobado(){
+// if(ms.toFixed(0)>tiempo.toFixed(0) && aprobacion==1){
+// document.getElementById("julioCesar").src="img/mal.png";
+// aprobacion==0;
+// }
+// }
+
 setInterval(paradasModal1, 10);
 function paradasModal1() {
-	penalizacion.innerHTML = videoCR.currentTime();
-	if (videoCR.currentTime() > '2' && faseVideo == 0) {
+	tiempo.innerHTML = videoCR.currentTime();
+	if (videoCR.currentTime() > '3' && faseVideo == 0) {
 		$('#myModal1').modal('show');
 		faseVideo = 1;
 		myVideoCR.pause();
@@ -105,7 +114,7 @@ function paradasModal1() {
 
 setInterval(paradasModal2, 10);
 function paradasModal2() {
-	if (videoCR.currentTime() > '4' && faseVideo == 1) {
+	if (videoCR.currentTime() > '6' && faseVideo == 1) {
 		$('#myModal2').modal('show');
 		faseVideo = 2;
 		myVideoCR.pause();

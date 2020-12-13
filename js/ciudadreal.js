@@ -1,11 +1,13 @@
 var modoOculto = false;
+var modoTesteo = false;
 var myVideoCR = document.getElementById("miVideoCR");
 
 var penalizacion = document.getElementById("penalizacion");
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
 var pausasPuntos = document.getElementById("pausas");
-var estadoModo = document.getElementById("estadoModo");
+var estadoModoO = document.getElementById("estadoModoO");
+var estadoModoT = document.getElementById("estadoModoT");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
 var tiempoPrueba = document.getElementById("tiempoPrueba");
@@ -24,15 +26,16 @@ var faseVideo = 0;
 var nota = 0;
 var penalizando = false;
 
+
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
 	loop : false,
-	controls : true,
+	controls : false,
 	controlBar : {
 		volumePanel : {
 			inline : false
 		},
-		fullscreenToggle : true,
+		fullscreenToggle : false,
 		playToggle : false,
 	}
 });
@@ -80,17 +83,29 @@ function reset() {
 function ocultar() {
 	if (modoOculto == false) {
 		modoOculto = true;
-		estadoModo.innerHTML = 'ON';
+		estadoModoO.innerHTML = 'ON';
 		estadisticasOcultable.style.display = 'none';
 		fondo.style = "background-color : black";
 	} else {
 		modoOculto = false;
-		estadoModo.innerHTML = "OFF";
+		estadoModoO.innerHTML = "OFF";
 		estadisticasOcultable.style.display = 'block';
 		fondo.style = "background-color : white";
 	}
 }
 
+//function testeo() {
+//	if (modoTesteo == false) {
+//		modoTesteo = true;
+//		videoCR.load();
+//		modoTesteo = true;
+//		estadoModoT.innerHTML = 'ON';
+//	} else {
+//		modoTesteo = false;
+//		videoCR.load();
+//		estadoModoT.innerHTML = "OFF";
+//	}
+//}
 setInterval(cronometro, 1000);
 function cronometro() {
 	if (empezado == true) {
@@ -203,7 +218,7 @@ function enviar1() {
 	var respuesta1 = document.getElementById("respuesta1").value;
 
 	if (respuesta1.toUpperCase() == "ALARCOS"
-			|| respuesta1.toUpperCase() == "ERMITA DE ALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITADEALARCOS"
 			|| respuesta1.toUpperCase().replaceAll(' ', '') == "NUESTRASEÑORADEALARCOS"
 			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITANUESTRASEÑORADEALARCOS"
 			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITADENUESTRASEÑORADEALARCOS"

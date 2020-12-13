@@ -12,7 +12,7 @@ var tiempoPrueba = document.getElementById("tiempoPrueba");
 // var nota = document.getElementById("nota");
 // var julioCesar = document.getElementById("julioCesar");
 
-var aprobacion = 1;
+// var aprobacion = 1;
 var contR = 1;
 var contP = 1;
 var contAciertos = 0;
@@ -49,46 +49,32 @@ function comprobacionPlay() {
 function play() {
 	if (empezado == false) {
 		empezado = true;
-		reset();
 		cronometro();
 	}
 	if (myVideoCR.paused) {
 		myVideoCR.play();
 	}
-
+	if (acabado == true) {
+		reset();
+	}
 }
+
 function pause() {
 	if (!myVideoCR.paused) {
 		myVideoCR.pause();
 		cuentaPausa.innerHTML = contP++;
 		pausasPuntos.innerHTML = cuentaPausa.innerHTML;
-
 	}
 }
 
-function reiniciar() {
-
+function atras() {
 	window.location.href = "index.html";
-	cuentaReinicios.innerHTML = contR++;
-	contP = 1;
-	cuentaPausa.innerHTML = 0;
-	if (modoOculto == true) {
-		ocultar();
-	}
 }
 
 function reset() {
-	document.getElementById("penalizacion").innerHTML = "-";
-	document.getElementById("cuentaPausa").innerHTML = "0";
-	document.getElementById("pausas").innerHTML = "-";
-	document.getElementById("tiempo").innerHTML = "0";
-	document.getElementById("tiempoPrueba").innerHTML = "-15";
-	document.getElementById("nota").innerHTML = "0.00";
-	document.getElementById("fallos").innerHTML = "-";
-	nota = 0;
-	faseVideo = 0;
-	ms = -15;
-
+	location.reload();
+	empezado = false;
+	acabado = false;
 }
 
 function ocultar() {
@@ -208,8 +194,7 @@ function paradasModal6() {
 
 // Notas --> Pregunta 1 y 6 (2ptos). Preguntas 2,3,4 y 5 (1.5ptos)
 // Penalizacion fallos --> -1pto siempre
-// Penalizacion del tiempo afecta a la nota cuando alcanza el currentTime del
-// video
+// Penalizacion el tiempo cuando alcanza el currentTime del video
 // Dedo abajo y rojo si nota es <5 y el tiempo ya esta penalizando
 
 // -----MODAL1----------------------------------------------------------------
@@ -360,6 +345,7 @@ function enviar6() {
 		myVideoCR.play();
 		nota = nota + 2;
 		empezado = false;
+		acabado = true;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
@@ -367,6 +353,7 @@ function enviar6() {
 		myVideoCR.play();
 		nota = nota - 0.5;
 		empezado = false;
+		acabado = true;
 	}
 }
 

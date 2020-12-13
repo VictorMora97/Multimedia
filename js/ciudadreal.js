@@ -9,6 +9,7 @@ var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
 var tiempoPrueba = document.getElementById("tiempoPrueba");
+//var nota = document.getElementById("nota");
 // var julioCesar = document.getElementById("imgPuntos");
 
 var aprobacion = 1;
@@ -17,8 +18,10 @@ var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var ms = -20;
+var acabado = false; 
+var ms = -10;
 var faseVideo = 0;
+var nota = 0;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -91,8 +94,21 @@ function cronometro() {
 	if (empezado == true) {
 		ms = ms + 1;
 		tiempoPrueba.innerHTML = ms.toFixed(0);
+	} 
+}
+
+setInterval(calculoNota, 100);
+function calculoNota() {
+	document.getElementById("nota").innerHTML=nota.toFixed(1);
+}
+
+setInterval(penalizacionTiempo, 1500);
+function penalizacionTiempo() {
+	if ( ms-videoCR.currentTime() > "0" ){
+		nota = nota - 0.1;
 	}
 }
+
 
 // setInterval(aprobado, 1000);
 // function aprobado(){
@@ -157,6 +173,10 @@ function paradasModal6() {
 	}
 }
 
+// Notas --> Pregunta 1 y 6 (2ptos). Preguntas 2,3,4 y 5 (1.5ptos)
+// Penalizacion fallos --> -1pto siempre
+// Penalizacion del tiempo afecta a la nota cuando alcanza el currentTime del video
+
 // -----MODAL1----------------------------------------------------------------
 
 function enviar1() {
@@ -173,11 +193,13 @@ function enviar1() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
+		nota=nota+2; 
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
+		nota=nota-1; 
 	}
 }
 
@@ -195,12 +217,14 @@ function enviar2() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta").checked = false;
 		myVideoCR.play();
+		nota=nota+1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("1inc1").checked = false;
 		document.getElementById("1inc2").checked = false;
 		myVideoCR.play();
+		nota=nota-1;
 	}
 }
 
@@ -219,12 +243,14 @@ function enviar3() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta1").checked = false;
 		myVideoCR.play();
+		nota=nota+1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("2inc1").checked = false;
 		document.getElementById("2inc2").checked = false;
 		myVideoCR.play();
+		nota=nota-1;
 	}
 }
 
@@ -243,12 +269,14 @@ function enviar4() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta2").checked = false;
 		myVideoCR.play();
+		nota=nota+1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("3inc1").checked = false;
 		document.getElementById("3inc2").checked = false;
 		myVideoCR.play();
+		nota=nota-1;
 	}
 }
 
@@ -267,12 +295,14 @@ function enviar5() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta3").checked = false;
 		myVideoCR.play();
+		nota=nota+1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("4inc1").checked = false;
 		document.getElementById("4inc2").checked = false;
 		myVideoCR.play();
+		nota=nota-1;
 	}
 }
 
@@ -293,11 +323,15 @@ function enviar6() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
+		nota=nota+2;
+		empezado=false;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
+		nota=nota-1;
+		empezado=false;
 	}
 }
 

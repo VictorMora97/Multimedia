@@ -130,6 +130,15 @@ function paradasModal3() {
 	}
 }
 
+setInterval(paradasModal4, 10);
+function paradasModal4() {
+	if (videoCR.currentTime() > '53' && faseVideo == 3) {
+		$('#myModal4').modal('show');
+		faseVideo = 4;
+		myVideoCR.pause();
+	}
+}
+
 // -----MODAL1----------------------------------------------------------------
 
 function enviar1() {
@@ -169,8 +178,8 @@ function enviar2() {
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
-		document.getElementById("inc1").checked = false;
-		document.getElementById("inc2").checked = false;
+		document.getElementById("1inc1").checked = false;
+		document.getElementById("1inc2").checked = false;
 		myVideoCR.play();
 	}
 }
@@ -184,23 +193,47 @@ function repetir2() {
 // ------MODAL3---------------------------------------------------------------
 
 function enviar3() {
-	var respuestaC = document.getElementById("correcta1").checked;
-	if (respuestaC == true) {
+	var respuestaC1 = document.getElementById("correcta1").checked;
+	if (respuestaC1 == true) {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
-		document.getElementById("correcta").checked = false;
+		document.getElementById("correcta1").checked = false;
 		myVideoCR.play();
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
-		document.getElementById("inc1").checked = false;
-		document.getElementById("inc2").checked = false;
+		document.getElementById("2inc1").checked = false;
+		document.getElementById("2inc2").checked = false;
 		myVideoCR.play();
 	}
 }
 
 function repetir3() {
 	videoCR.currentTime(27);
+	myVideoCR.play();
+	faseVideo = faseVideo - 1;
+}
+
+//------MODAL4---------------------------------------------------------------
+
+function enviar4() {
+	var respuestaC2 = document.getElementById("correcta2").checked;
+	if (respuestaC2 == true) {
+		contAciertos++;
+		aciertos.innerHTML = contAciertos;
+		document.getElementById("correcta2").checked = false;
+		myVideoCR.play();
+	} else {
+		contFallos++;
+		fallos.innerHTML = contFallos;
+		document.getElementById("3inc1").checked = false;
+		document.getElementById("3inc2").checked = false;
+		myVideoCR.play();
+	}
+}
+
+function repetir4() {
+	videoCR.currentTime(42);
 	myVideoCR.play();
 	faseVideo = faseVideo - 1;
 }

@@ -122,7 +122,7 @@ function calculoNota() {
 setInterval(penalizacionTiempo, 500);
 function penalizacionTiempo() {
 	if ((ms - videoCR.currentTime() > "0") && empezado == true) {
-		nota = nota - 0.02;
+		nota = nota - 0.01;
 		tiempoPrueba.style = "color: red";
 		if (nota < 5) {
 			document.getElementById("julioCesar").src = "img/mal.png";
@@ -234,7 +234,7 @@ function enviar1() {
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
-		nota = nota - 0.5;
+		nota = nota - 0.7;
 	}
 }
 
@@ -259,7 +259,7 @@ function enviar2() {
 		document.getElementById("1inc1").checked = false;
 		document.getElementById("1inc2").checked = false;
 		myVideoCR.play();
-		nota = nota - 0.7;
+		nota = nota - 1;
 	}
 }
 
@@ -285,7 +285,7 @@ function enviar3() {
 		document.getElementById("2inc1").checked = false;
 		document.getElementById("2inc2").checked = false;
 		myVideoCR.play();
-		nota = nota - 0.7;
+		nota = nota - 1;
 	}
 }
 
@@ -311,7 +311,7 @@ function enviar4() {
 		document.getElementById("3inc1").checked = false;
 		document.getElementById("3inc2").checked = false;
 		myVideoCR.play();
-		nota = nota - 0.7;
+		nota = nota - 1;
 	}
 }
 
@@ -337,7 +337,7 @@ function enviar5() {
 		document.getElementById("4inc1").checked = false;
 		document.getElementById("4inc2").checked = false;
 		myVideoCR.play();
-		nota = nota - 0.7;
+		nota = nota - 1;
 	}
 }
 
@@ -366,7 +366,7 @@ function enviar6() {
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
-		nota = nota - 0.5;
+		nota = nota - 0.7;
 		empezado = false;
 		acabado = true;
 	}

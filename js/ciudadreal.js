@@ -105,7 +105,7 @@ function cronometro() {
 setInterval(paradasModal1, 10);
 function paradasModal1() {
 	tiempo.innerHTML = videoCR.currentTime();
-	if (videoCR.currentTime() > '3' && faseVideo == 0) {
+	if (videoCR.currentTime() > '15' && faseVideo == 0) {
 		$('#myModal1').modal('show');
 		faseVideo = 1;
 		myVideoCR.pause();
@@ -114,7 +114,7 @@ function paradasModal1() {
 
 setInterval(paradasModal2, 10);
 function paradasModal2() {
-	if (videoCR.currentTime() > '6' && faseVideo == 1) {
+	if (videoCR.currentTime() > '30' && faseVideo == 1) {
 		$('#myModal2').modal('show');
 		faseVideo = 2;
 		myVideoCR.pause();
@@ -125,7 +125,12 @@ function paradasModal2() {
 
 function enviar1() {
 	var respuesta1 = document.getElementById("respuesta1").value;
-	if (respuesta1 == "hola" || respuesta1 == "Hola" || respuesta1 == "HOLA") {
+	if (respuesta1 == "alarcos" || respuesta1 == "Alarcos"
+			|| respuesta1 == "ALARCOS" || respuesta1 == "ermita de alarcos"
+			|| respuesta1 == "ermita de Alarcos"
+			|| respuesta1 == "Ermita de Alarcos"
+			|| respuesta1 == "nuestra señora de alarcos"
+			|| respuesta1 == "nuestra Señora de Alarcos") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta1").value = "";
@@ -139,8 +144,9 @@ function enviar1() {
 }
 
 function repetir1() {
-	videoCR.currentTime(5);
+	videoCR.currentTime(0);
 	myVideoCR.play();
+	faseVideo = faseVideo - 1;
 }
 // ------MODAL2---------------------------------------------------------------
 
@@ -163,6 +169,7 @@ function enviar2() {
 function repetir2() {
 	videoCR.currentTime(15);
 	myVideoCR.play();
+	faseVideo = faseVideo - 1;
 }
 
 // $(window).on('load', function() {

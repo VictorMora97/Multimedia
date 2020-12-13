@@ -106,7 +106,7 @@ setInterval(paradasModal1, 10);
 function paradasModal1() {
 	tiempo.innerHTML = videoCR.currentTime();
 	if (videoCR.currentTime() > '15' && faseVideo == 0) {
-		$('#myModal1').modal('show');
+		$('#myModal1').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 1;
 		myVideoCR.pause();
 	}
@@ -115,7 +115,7 @@ function paradasModal1() {
 setInterval(paradasModal2, 10);
 function paradasModal2() {
 	if (videoCR.currentTime() > '27' && faseVideo == 1) {
-		$('#myModal2').modal('show');
+		$('#myModal2').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 2;
 		myVideoCR.pause();
 	}
@@ -124,7 +124,7 @@ function paradasModal2() {
 setInterval(paradasModal3, 10);
 function paradasModal3() {
 	if (videoCR.currentTime() > '42' && faseVideo == 2) {
-		$('#myModal3').modal('show');
+		$('#myModal3').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 3;
 		myVideoCR.pause();
 	}
@@ -133,7 +133,7 @@ function paradasModal3() {
 setInterval(paradasModal4, 10);
 function paradasModal4() {
 	if (videoCR.currentTime() > '53' && faseVideo == 3) {
-		$('#myModal4').modal('show');
+		$('#myModal4').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 4;
 		myVideoCR.pause();
 	}
@@ -142,7 +142,7 @@ function paradasModal4() {
 setInterval(paradasModal5, 10);
 function paradasModal5() {
 	if (videoCR.currentTime() > '65' && faseVideo == 4) {
-		$('#myModal5').modal('show');
+		$('#myModal5').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 5;
 		myVideoCR.pause();
 	}
@@ -151,7 +151,7 @@ function paradasModal5() {
 setInterval(paradasModal6, 10);
 function paradasModal6() {
 	if (videoCR.currentTime() > '77' && faseVideo == 5) {
-		$('#myModal6').modal('show');
+		$('#myModal6').modal({backdrop: 'static', keyboard: false}); 
 		faseVideo = 6;
 		myVideoCR.pause();
 	}

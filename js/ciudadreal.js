@@ -10,7 +10,7 @@ var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
 var tiempoPrueba = document.getElementById("tiempoPrueba");
 // var nota = document.getElementById("nota");
-var julioCesar = document.getElementById("julioCesar");
+// var julioCesar = document.getElementById("julioCesar");
 
 var aprobacion = 1;
 var contR = 1;
@@ -49,6 +49,7 @@ function comprobacionPlay() {
 function play() {
 	if (empezado == false) {
 		empezado = true;
+		reset();
 		cronometro();
 	}
 	if (myVideoCR.paused) {
@@ -74,6 +75,20 @@ function reiniciar() {
 	if (modoOculto == true) {
 		ocultar();
 	}
+}
+
+function reset() {
+	document.getElementById("penalizacion").innerHTML = "-";
+	document.getElementById("cuentaPausa").innerHTML = "0";
+	document.getElementById("pausas").innerHTML = "-";
+	document.getElementById("tiempo").innerHTML = "0";
+	document.getElementById("tiempoPrueba").innerHTML = "-15";
+	document.getElementById("nota").innerHTML = "0.00";
+	document.getElementById("fallos").innerHTML = "-";
+	nota = 0;
+	faseVideo = 0;
+	ms = -15;
+
 }
 
 function ocultar() {

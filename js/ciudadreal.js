@@ -139,6 +139,15 @@ function paradasModal4() {
 	}
 }
 
+setInterval(paradasModal5, 10);
+function paradasModal5() {
+	if (videoCR.currentTime() > '65' && faseVideo == 4) {
+		$('#myModal5').modal('show');
+		faseVideo = 5;
+		myVideoCR.pause();
+	}
+}
+
 // -----MODAL1----------------------------------------------------------------
 
 function enviar1() {
@@ -234,6 +243,30 @@ function enviar4() {
 
 function repetir4() {
 	videoCR.currentTime(42);
+	myVideoCR.play();
+	faseVideo = faseVideo - 1;
+}
+
+//------MODAL5---------------------------------------------------------------
+
+function enviar5() {
+	var respuestaC3 = document.getElementById("correcta3").checked;
+	if (respuestaC3 == true) {
+		contAciertos++;
+		aciertos.innerHTML = contAciertos;
+		document.getElementById("correcta3").checked = false;
+		myVideoCR.play();
+	} else {
+		contFallos++;
+		fallos.innerHTML = contFallos;
+		document.getElementById("4inc1").checked = false;
+		document.getElementById("4inc2").checked = false;
+		myVideoCR.play();
+	}
+}
+
+function repetir5() {
+	videoCR.currentTime(53);
 	myVideoCR.play();
 	faseVideo = faseVideo - 1;
 }

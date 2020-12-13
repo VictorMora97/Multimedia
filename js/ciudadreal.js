@@ -148,6 +148,15 @@ function paradasModal5() {
 	}
 }
 
+setInterval(paradasModal6, 10);
+function paradasModal6() {
+	if (videoCR.currentTime() > '77' && faseVideo == 5) {
+		$('#myModal6').modal('show');
+		faseVideo = 6;
+		myVideoCR.pause();
+	}
+}
+
 // -----MODAL1----------------------------------------------------------------
 
 function enviar1() {
@@ -267,6 +276,34 @@ function enviar5() {
 
 function repetir5() {
 	videoCR.currentTime(53);
+	myVideoCR.play();
+	faseVideo = faseVideo - 1;
+}
+
+//-----MODAL6----------------------------------------------------------------
+
+function enviar6() {
+	var respuesta2 = document.getElementById("respuesta2").value;
+	if (respuesta2 == "gasset" || respuesta1 == "Gasset"
+			|| respuesta2 == "GASSET" || respuesta2 == "parque de gasset"
+			|| respuesta2 == "parque de Gasset"
+			|| respuesta2 == "Parque de Gasset"
+			|| respuesta2 == "PARQUE DE GASSET"
+			|| respuesta2 == "Parque de gasset") {
+		contAciertos++;
+		aciertos.innerHTML = contAciertos;
+		document.getElementById("respuesta2").value = "";
+		myVideoCR.play();
+	} else {
+		contFallos++;
+		fallos.innerHTML = contFallos;
+		document.getElementById("respuesta2").value = "";
+		myVideoCR.play();
+	}
+}
+
+function repetir6() {
+	videoCR.currentTime(65);
 	myVideoCR.play();
 	faseVideo = faseVideo - 1;
 }

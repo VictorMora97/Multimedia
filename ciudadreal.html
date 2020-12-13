@@ -91,9 +91,10 @@
 					<b class="padPt">Nº de fallos: </b> <b id="fallos">-</b><br> <br>
 					<b class="padPt">Tiempo de prueba: </b><b id="tiempoPrueba">0</b><br>
 					<b class="padPt">Tiempo de video: </b><b id="tiempo">-</b><br>
-					<br> <b class="padPt">NOTA: </b> <b id="nota">-</b><br> <br>
-					<br> <br> <img id="julioCesar" src="img/bien.png"
-						class="imgPuntos" height="150"> <br>
+					<br> <b class="padPt nota">NOTA: </b> <b class="nota"
+						id="nota">-</b><br> <br> <br> <br> <img
+						id="julioCesar" src="img/bien.png" class="imgPuntos" height="150">
+					<br>
 					<!-- <img class="gif" src="giphy.gif" width> -->
 				</div>
 			</div>
@@ -113,8 +114,8 @@
 			<div class="modal-content">
 				<div class="modal-header cabecera">
 
-					<h5 id="titulo" class="modal-title titulo">¿Qué ermita que
-						aparece en el video?</h5>
+					<h5 id="titulo" class="modal-title titulo">¿Qué ermita aparece
+						en el video?</h5>
 				</div>
 				<div class="modal-body cuerpo">
 					<p>Se situa en un cerro cercano a Ciudad Real, alli se celebra
@@ -213,8 +214,8 @@
 
 		</div>
 	</div>
-	
-		<!----------------------------------------------------------------------------------->
+
+	<!----------------------------------------------------------------------------------->
 
 	<!-- 4) CUARTO MODAL: RESPUESTA MULTIPLE -->
 	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal2">Open Modal</button> -->
@@ -226,7 +227,8 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header cabecera">
-					<h5 class="modal-title titulo">¿De quien es la primera estatua en aparecer?</h5>
+					<h5 class="modal-title titulo">¿De quién es la primera estatua
+						que aparece?</h5>
 				</div>
 				<div class="radio radioBotones">
 					<br> <label><input id="3inc1" type="radio"
@@ -234,11 +236,13 @@
 				</div>
 				<div class="radio  radioBotones">
 					<br> <label><input id="correcta2" type="radio"
-						name="optradio" checked> Alfonso X el Sabio, fundador de Ciudad Real</label>
+						name="optradio" checked> Alfonso X el Sabio, fundador de
+						Ciudad Real</label>
 				</div>
 				<div class="radio  radioBotones">
 					<br> <label><input id="3inc2" type="radio"
-						name="optradio"> Alfonso VI el Sabio, fundador de Ciudad Real</label><br>
+						name="optradio"> Alfonso VI el Sabio, fundador de Ciudad
+						Real</label><br>
 				</div>
 				<br>
 				<div class="modal-footer pie">
@@ -252,8 +256,8 @@
 
 		</div>
 	</div>
-	
-			<!----------------------------------------------------------------------------------->
+
+	<!----------------------------------------------------------------------------------->
 
 	<!-- 5) QUINTO MODAL: RESPUESTA MULTIPLE -->
 	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal2">Open Modal</button> -->
@@ -265,15 +269,18 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header cabecera">
-					<h5 class="modal-title titulo">¿Cual es el producto gastronómico más exportado de Ciudad Real?</h5>
+					<h5 class="modal-title titulo">¿Cual es el producto
+						gastronómico más exportado de Ciudad Real?</h5>
 				</div>
 				<div class="radio radioBotones">
 					<br> <label><input id="4inc1" type="radio"
-						name="optradio"> Aceite de oliva (60% de toda la exportación de CLM)</label>
+						name="optradio"> Aceite de oliva (60% de toda la
+						exportación de CLM)</label>
 				</div>
 				<div class="radio  radioBotones">
 					<br> <label><input id="correcta3" type="radio"
-						name="optradio" checked> Vino (50% de toda la exportación de CLM)</label>
+						name="optradio" checked> Vino (50% de toda la exportación
+						de CLM)</label>
 				</div>
 				<div class="radio  radioBotones">
 					<br> <label><input id="4inc2" type="radio"
@@ -292,6 +299,38 @@
 		</div>
 	</div>
 
+	<!----------------------------------------------------------------------------------->
+
+	<!-- 6) SEXTO MODAL: RELLENAR INFO -->
+	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal1">Open Modal</button> -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal6" role="dialog" onload="pause()">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+
+					<h5 id="titulo" class="modal-title titulo">¿Como se llama el
+						parque de las imágenes?</h5>
+				</div>
+				<div class="modal-body cuerpo">
+					<p>Es el parque mas antiguo de Ciudad Real, inaugurado en 1915,
+						y actualmente con una superficie de 9 hectáreas</p>
+					<input type="text" class="form-control" id="respuesta2">
+				</div>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-danger repetir"
+						onclick="repetir6()" data-dismiss="modal">Repetir
+						fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar6()">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<!----------------------------------------------------------------------------------->
 

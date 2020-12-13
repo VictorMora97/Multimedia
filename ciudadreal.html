@@ -113,10 +113,12 @@
 			<div class="modal-content">
 				<div class="modal-header cabecera">
 
-					<h4 id="titulo" class="modal-title titulo">¿Qué ermita que aparece en el video?</h4>
+					<h5 id="titulo" class="modal-title titulo">¿Qué ermita que
+						aparece en el video?</h5>
 				</div>
 				<div class="modal-body cuerpo">
-					<p>Se situa en un cerro cercano a Ciudad Real, alli se celebra la romeria de la ciudad, y tiene un yacimiento arqueológico</p>
+					<p>Se situa en un cerro cercano a Ciudad Real, alli se celebra
+						la romeria de la ciudad, y tiene un yacimiento arqueológico</p>
 					<input type="text" class="form-control" id="respuesta1">
 				</div>
 				<div class="modal-footer pie">
@@ -143,26 +145,69 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header cabecera">
-					<h4 class="modal-title titulo">¿De quienes son las estatuas que aparecen?</h4>
+					<h5 class="modal-title titulo">¿De quienes son las estatuas
+						que aparecen?</h5>
 				</div>
 				<div class="radio radioBotones">
-					<label><input id="correcta" type="radio" name="optradio"
-						checked> Los Reyes Catolicos</label>
+					<br> <label><input id="correcta" type="radio"
+						name="optradio" checked> Los Reyes Catolicos</label>
 				</div>
 				<div class="radio  radioBotones">
-					<label><input id="inc1" type="radio" name="optradio">
-						Don Quijote y Dulcinea</label>
+					<br> <label><input id="inc1" type="radio"
+						name="optradio"> Don Quijote y Dulcinea</label>
 				</div>
 				<div class="radio  radioBotones">
-					<label><input id="inc2" type="radio" name="optradio">
-						Cervantes y Colón</label>
+					<br> <label><input id="inc2" type="radio"
+						name="optradio"> Cervantes y Colón</label><br>
 				</div>
+				<br>
 				<div class="modal-footer pie">
 					<button type="button" class="btn btn-danger repetir"
 						data-dismiss="modal" onclick="repetir2()">Repetir
 						fragmento</button>
 					<button type="submit" class="btn btn-success enviar"
 						data-dismiss="modal" onclick="enviar2()">Enviar Respuesta</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!----------------------------------------------------------------------------------->
+
+	<!-- 3) TERCER MODAL: RESPUESTA MULTIPLE -->
+	<!-- <button type="button" class="btn" data-toggle="modal" data-target="#myModal2">Open Modal</button> -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header cabecera">
+					<h5 class="modal-title titulo">¿De quienes son las estatuas
+						móviles?</h5>
+				</div>
+				<div class="radio radioBotones">
+					<br> <label><input id="inc1" type="radio"
+						name="optradio"> Don Quijote, Sancho Panza y Dulcinea</label>
+				</div>
+				<div class="radio  radioBotones">
+					<br> <label><input id="correcta1" type="radio"
+						name="optradio" checked> Don Quijote, Sancho Panza y
+						Cervantes</label>
+				</div>
+				<div class="radio  radioBotones">
+					<br> <label><input id="inc2" type="radio"
+						name="optradio"> Don Quijote, Cervantes y Carlos III</label><br>
+				</div>
+				<br>
+				<div class="modal-footer pie">
+					<button type="button" class="btn btn-danger repetir"
+						data-dismiss="modal" onclick="repetir3()">Repetir
+						fragmento</button>
+					<button type="submit" class="btn btn-success enviar"
+						data-dismiss="modal" onclick="enviar3()">Enviar Respuesta</button>
 				</div>
 			</div>
 

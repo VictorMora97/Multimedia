@@ -9,8 +9,8 @@ var estadoModo = document.getElementById("estadoModo");
 var fondo = document.getElementById("fondo");
 var tiempo = document.getElementById("tiempo");
 var tiempoPrueba = document.getElementById("tiempoPrueba");
-//var nota = document.getElementById("nota");
-// var julioCesar = document.getElementById("imgPuntos");
+// var nota = document.getElementById("nota");
+var julioCesar = document.getElementById("julioCesar");
 
 var aprobacion = 1;
 var contR = 1;
@@ -18,10 +18,11 @@ var contP = 1;
 var contAciertos = 0;
 var contFallos = 0;
 var empezado = false;
-var acabado = false; 
-var ms = -10;
+var acabado = false;
+var ms = -15;
 var faseVideo = 0;
 var nota = 0;
+var penalizando = false;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
@@ -94,35 +95,37 @@ function cronometro() {
 	if (empezado == true) {
 		ms = ms + 1;
 		tiempoPrueba.innerHTML = ms.toFixed(0);
-	} 
+	}
 }
 
 setInterval(calculoNota, 100);
 function calculoNota() {
-	document.getElementById("nota").innerHTML=nota.toFixed(1);
+	document.getElementById("nota").innerHTML = nota.toFixed(2);
 }
 
-setInterval(penalizacionTiempo, 1500);
+setInterval(penalizacionTiempo, 500);
 function penalizacionTiempo() {
-	if ( ms-videoCR.currentTime() > "0" ){
-		nota = nota - 0.1;
+	if ((ms - videoCR.currentTime() > "0") && empezado == true) {
+		nota = nota - 0.02;
+		tiempoPrueba.style = "color: red";
+		if (nota < 5) {
+			document.getElementById("julioCesar").src = "img/mal.png";
+		} else {
+			document.getElementById("julioCesar").src = "img/bien.png";
+		}
+	} else if (nota >= 5) {
+		document.getElementById("julioCesar").src = "img/bien.png";
 	}
 }
-
-
-// setInterval(aprobado, 1000);
-// function aprobado(){
-// if(ms.toFixed(0)>tiempo.toFixed(0) && aprobacion==1){
-// document.getElementById("julioCesar").src="img/mal.png";
-// aprobacion==0;
-// }
-// }
 
 setInterval(paradasModal1, 10);
 function paradasModal1() {
 	tiempo.innerHTML = videoCR.currentTime();
 	if (videoCR.currentTime() > '15' && faseVideo == 0) {
-		$('#myModal1').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal1').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 1;
 		myVideoCR.pause();
 	}
@@ -131,7 +134,10 @@ function paradasModal1() {
 setInterval(paradasModal2, 10);
 function paradasModal2() {
 	if (videoCR.currentTime() > '27' && faseVideo == 1) {
-		$('#myModal2').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal2').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 2;
 		myVideoCR.pause();
 	}
@@ -140,7 +146,10 @@ function paradasModal2() {
 setInterval(paradasModal3, 10);
 function paradasModal3() {
 	if (videoCR.currentTime() > '42' && faseVideo == 2) {
-		$('#myModal3').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal3').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 3;
 		myVideoCR.pause();
 	}
@@ -149,7 +158,10 @@ function paradasModal3() {
 setInterval(paradasModal4, 10);
 function paradasModal4() {
 	if (videoCR.currentTime() > '53' && faseVideo == 3) {
-		$('#myModal4').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal4').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 4;
 		myVideoCR.pause();
 	}
@@ -158,7 +170,10 @@ function paradasModal4() {
 setInterval(paradasModal5, 10);
 function paradasModal5() {
 	if (videoCR.currentTime() > '65' && faseVideo == 4) {
-		$('#myModal5').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal5').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 5;
 		myVideoCR.pause();
 	}
@@ -167,7 +182,10 @@ function paradasModal5() {
 setInterval(paradasModal6, 10);
 function paradasModal6() {
 	if (videoCR.currentTime() > '77' && faseVideo == 5) {
-		$('#myModal6').modal({backdrop: 'static', keyboard: false}); 
+		$('#myModal6').modal({
+			backdrop : 'static',
+			keyboard : false
+		});
 		faseVideo = 6;
 		myVideoCR.pause();
 	}
@@ -175,7 +193,9 @@ function paradasModal6() {
 
 // Notas --> Pregunta 1 y 6 (2ptos). Preguntas 2,3,4 y 5 (1.5ptos)
 // Penalizacion fallos --> -1pto siempre
-// Penalizacion del tiempo afecta a la nota cuando alcanza el currentTime del video
+// Penalizacion del tiempo afecta a la nota cuando alcanza el currentTime del
+// video
+// Dedo abajo y rojo si nota es <5 y el tiempo ya esta penalizando
 
 // -----MODAL1----------------------------------------------------------------
 
@@ -184,22 +204,22 @@ function enviar1() {
 
 	if (respuesta1.toUpperCase() == "ALARCOS"
 			|| respuesta1.toUpperCase() == "ERMITA DE ALARCOS"
-			|| respuesta1.toUpperCase().replaceAll(' ','') == "NUESTRASEÑORADEALARCOS"
-			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITANUESTRASEÑORADEALARCOS"
-			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITADENUESTRASEÑORADEALARCOS"
-			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITAALARCOS") {
+			|| respuesta1.toUpperCase().replaceAll(' ', '') == "NUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITANUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITADENUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ', '') == "ERMITAALARCOS") {
 
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
-		nota=nota+2; 
+		nota = nota + 2;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
-		nota=nota-1; 
+		nota = nota - 0.5;
 	}
 }
 
@@ -217,14 +237,14 @@ function enviar2() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta").checked = false;
 		myVideoCR.play();
-		nota=nota+1.5;
+		nota = nota + 1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("1inc1").checked = false;
 		document.getElementById("1inc2").checked = false;
 		myVideoCR.play();
-		nota=nota-1;
+		nota = nota - 0.7;
 	}
 }
 
@@ -243,14 +263,14 @@ function enviar3() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta1").checked = false;
 		myVideoCR.play();
-		nota=nota+1.5;
+		nota = nota + 1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("2inc1").checked = false;
 		document.getElementById("2inc2").checked = false;
 		myVideoCR.play();
-		nota=nota-1;
+		nota = nota - 0.7;
 	}
 }
 
@@ -269,14 +289,14 @@ function enviar4() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta2").checked = false;
 		myVideoCR.play();
-		nota=nota+1.5;
+		nota = nota + 1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("3inc1").checked = false;
 		document.getElementById("3inc2").checked = false;
 		myVideoCR.play();
-		nota=nota-1;
+		nota = nota - 0.7;
 	}
 }
 
@@ -295,14 +315,14 @@ function enviar5() {
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("correcta3").checked = false;
 		myVideoCR.play();
-		nota=nota+1.5;
+		nota = nota + 1.5;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("4inc1").checked = false;
 		document.getElementById("4inc2").checked = false;
 		myVideoCR.play();
-		nota=nota-1;
+		nota = nota - 0.7;
 	}
 }
 
@@ -317,21 +337,21 @@ function repetir5() {
 function enviar6() {
 	var respuesta2 = document.getElementById("respuesta2").value;
 	if (respuesta2.toUpperCase() == "GASSET"
-		|| respuesta2.toUpperCase().replaceAll(' ','') == "PARQUEDEGASSET"
-		|| respuesta2.toUpperCase().replaceAll(' ','') == "DEGASSET") {
+			|| respuesta2.toUpperCase().replaceAll(' ', '') == "PARQUEDEGASSET"
+			|| respuesta2.toUpperCase().replaceAll(' ', '') == "DEGASSET") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
-		nota=nota+2;
-		empezado=false;
+		nota = nota + 2;
+		empezado = false;
 	} else {
 		contFallos++;
 		fallos.innerHTML = contFallos;
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
-		nota=nota-1;
-		empezado=false;
+		nota = nota - 0.5;
+		empezado = false;
 	}
 }
 

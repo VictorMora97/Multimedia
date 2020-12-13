@@ -161,12 +161,14 @@ function paradasModal6() {
 
 function enviar1() {
 	var respuesta1 = document.getElementById("respuesta1").value;
-	if (respuesta1 == "alarcos" || respuesta1 == "Alarcos"
-			|| respuesta1 == "ALARCOS" || respuesta1 == "ermita de alarcos"
-			|| respuesta1 == "ermita de Alarcos"
-			|| respuesta1 == "Ermita de Alarcos"
-			|| respuesta1 == "nuestra señora de alarcos"
-			|| respuesta1 == "nuestra Señora de Alarcos") {
+
+	if (respuesta1.toUpperCase() == "ALARCOS"
+			|| respuesta1.toUpperCase() == "ERMITA DE ALARCOS"
+			|| respuesta1.toUpperCase() == "NUESTRA SEÑORA DE ALARCOS"
+			|| respuesta1.toUpperCase() == "ERMITA NUESTRA SEÑORA DE ALARCOS"
+			|| respuesta1.toUpperCase() == "ERMITA DE NUESTRA SEÑORA DE ALARCOS"
+			|| respuesta1.toUpperCase() == "ERMITA ALARCOS") {
+
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta1").value = "";
@@ -232,7 +234,7 @@ function repetir3() {
 	faseVideo = faseVideo - 1;
 }
 
-//------MODAL4---------------------------------------------------------------
+// ------MODAL4---------------------------------------------------------------
 
 function enviar4() {
 	var respuestaC2 = document.getElementById("correcta2").checked;
@@ -256,7 +258,7 @@ function repetir4() {
 	faseVideo = faseVideo - 1;
 }
 
-//------MODAL5---------------------------------------------------------------
+// ------MODAL5---------------------------------------------------------------
 
 function enviar5() {
 	var respuestaC3 = document.getElementById("correcta3").checked;
@@ -280,16 +282,13 @@ function repetir5() {
 	faseVideo = faseVideo - 1;
 }
 
-//-----MODAL6----------------------------------------------------------------
+// -----MODAL6----------------------------------------------------------------
 
 function enviar6() {
 	var respuesta2 = document.getElementById("respuesta2").value;
-	if (respuesta2 == "gasset" || respuesta1 == "Gasset"
-			|| respuesta2 == "GASSET" || respuesta2 == "parque de gasset"
-			|| respuesta2 == "parque de Gasset"
-			|| respuesta2 == "Parque de Gasset"
-			|| respuesta2 == "PARQUE DE GASSET"
-			|| respuesta2 == "Parque de gasset") {
+	if (respuesta2.toUpperCase() == "GASSET"
+		|| respuesta2.toUpperCase() == "PARQUE DE GASSET"
+		|| respuesta2.toUpperCase() == "DE GASSET") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta2").value = "";

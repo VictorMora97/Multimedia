@@ -164,10 +164,10 @@ function enviar1() {
 
 	if (respuesta1.toUpperCase() == "ALARCOS"
 			|| respuesta1.toUpperCase() == "ERMITA DE ALARCOS"
-			|| respuesta1.toUpperCase() == "NUESTRA SEÑORA DE ALARCOS"
-			|| respuesta1.toUpperCase() == "ERMITA NUESTRA SEÑORA DE ALARCOS"
-			|| respuesta1.toUpperCase() == "ERMITA DE NUESTRA SEÑORA DE ALARCOS"
-			|| respuesta1.toUpperCase() == "ERMITA ALARCOS") {
+			|| respuesta1.toUpperCase().replaceAll(' ','') == "NUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITANUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITADENUESTRASEÑORADEALARCOS"
+			|| respuesta1.toUpperCase().replaceAll(' ','') == "ERMITAALARCOS") {
 
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
@@ -287,8 +287,8 @@ function repetir5() {
 function enviar6() {
 	var respuesta2 = document.getElementById("respuesta2").value;
 	if (respuesta2.toUpperCase() == "GASSET"
-		|| respuesta2.toUpperCase() == "PARQUE DE GASSET"
-		|| respuesta2.toUpperCase() == "DE GASSET") {
+		|| respuesta2.toUpperCase().replaceAll(' ','') == "PARQUEDEGASSET"
+		|| respuesta2.toUpperCase().replaceAll(' ','') == "DEGASSET") {
 		contAciertos++;
 		aciertos.innerHTML = contAciertos;
 		document.getElementById("respuesta2").value = "";

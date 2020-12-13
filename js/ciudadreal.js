@@ -114,7 +114,7 @@ function paradasModal1() {
 
 setInterval(paradasModal2, 10);
 function paradasModal2() {
-	if (videoCR.currentTime() > '30' && faseVideo == 1) {
+	if (videoCR.currentTime() > '27' && faseVideo == 1) {
 		$('#myModal2').modal('show');
 		faseVideo = 2;
 		myVideoCR.pause();

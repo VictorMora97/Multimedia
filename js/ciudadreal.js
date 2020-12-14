@@ -30,7 +30,7 @@ var penalizando = false;
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
 	loop : false,
-	controls : false,
+	controls : true,
 	controlBar : {
 		volumePanel : {
 			inline : false
@@ -40,6 +40,8 @@ var videoCR = videojs('miVideoCR', {
 	}
 });
 videoCR.removeChild('BigPlayButton');
+
+
 
 function comprobacionPlay() {
 	if (empezado == false && !myVideoCR.paused) {

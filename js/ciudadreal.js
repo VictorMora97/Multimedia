@@ -2,7 +2,7 @@ var modoOculto = false;
 var modoTesteo = false;
 var myVideoCR = document.getElementById("miVideoCR");
 
-var penalizacion = document.getElementById("penalizacion");
+//var penalizacion = document.getElementById("penalizacion");
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
 var pausasPuntos = document.getElementById("pausas");
@@ -119,12 +119,14 @@ function cronometro() {
 setInterval(calculoNota, 100);
 function calculoNota() {
 	document.getElementById("nota").innerHTML = nota.toFixed(2);
+	document.getElementById("penalizacion").innerHTML = penalizacion.toFixed(2);
 }
 
 setInterval(penalizacionTiempo, 500);
 function penalizacionTiempo() {
 	if ((ms - videoCR.currentTime() > "0") && empezado == true) {
 		nota = nota - 0.01;
+		penalizacion = penalizacion - 0.01;
 		tiempoPrueba.style = "color: red";
 		if (nota < 5) {
 			document.getElementById("julioCesar").src = "img/mal.png";
@@ -237,6 +239,7 @@ function enviar1() {
 		document.getElementById("respuesta1").value = "";
 		myVideoCR.play();
 		nota = nota - 0.7;
+		penalizacion = penalizacion - 0.07;
 	}
 }
 
@@ -262,6 +265,7 @@ function enviar2() {
 		document.getElementById("1inc2").checked = false;
 		myVideoCR.play();
 		nota = nota - 1;
+		penalizacion = penalizacion - 1;
 	}
 }
 
@@ -288,6 +292,7 @@ function enviar3() {
 		document.getElementById("2inc2").checked = false;
 		myVideoCR.play();
 		nota = nota - 1;
+		penalizacion = penalizacion - 1;
 	}
 }
 
@@ -314,6 +319,7 @@ function enviar4() {
 		document.getElementById("3inc2").checked = false;
 		myVideoCR.play();
 		nota = nota - 1;
+		penalizacion = penalizacion - 1;
 	}
 }
 
@@ -340,6 +346,7 @@ function enviar5() {
 		document.getElementById("4inc2").checked = false;
 		myVideoCR.play();
 		nota = nota - 1;
+		penalizacion = penalizacion - 1;
 	}
 }
 
@@ -369,6 +376,7 @@ function enviar6() {
 		document.getElementById("respuesta2").value = "";
 		myVideoCR.play();
 		nota = nota - 0.7;
+		penalizacion = penalizacion - 0.7;
 		empezado = false;
 		acabado = true;
 	}

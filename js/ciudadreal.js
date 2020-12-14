@@ -2,6 +2,7 @@ var modoOculto = false;
 var modoTesteo = false;
 var myVideoCR = document.getElementById("miVideoCR");
 
+
 //var penalizacion = document.getElementById("penalizacion");
 var cuentaReinicios = document.getElementById("cuentaReinicios");
 var cuentaPausa = document.getElementById("cuentaPausa");
@@ -25,6 +26,7 @@ var ms = -15;
 var faseVideo = 0;
 var nota = 0;
 var penalizando = false;
+var penalizacion=0;
 
 var videoCR = videojs('miVideoCR', {
 	fluid : true,

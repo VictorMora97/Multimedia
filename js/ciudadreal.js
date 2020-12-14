@@ -29,7 +29,7 @@ var penalizando = false;
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
 	loop : false,
-	controls : true, 
+	controls : false, 
 	controlBar : {
 		volumePanel : {
 			inline : false

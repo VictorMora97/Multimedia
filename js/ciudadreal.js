@@ -26,7 +26,6 @@ var faseVideo = 0;
 var nota = 0;
 var penalizando = false;
 
-
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
 	loop : false,
@@ -40,8 +39,6 @@ var videoCR = videojs('miVideoCR', {
 	}
 });
 videoCR.removeChild('BigPlayButton');
-
-
 
 function comprobacionPlay() {
 	if (empezado == false && !myVideoCR.paused) {

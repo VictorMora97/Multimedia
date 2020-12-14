@@ -29,7 +29,7 @@ var penalizando = false;
 var videoCR = videojs('miVideoCR', {
 	fluid : true,
 	loop : false,
-	controls : false,
+	controls : true, 
 	controlBar : {
 		volumePanel : {
 			inline : false
@@ -105,6 +105,15 @@ function ocultar() {
 //		estadoModoT.innerHTML = "OFF";
 //	}
 //}
+
+//function mantenimiento(){
+//	$('#myMantenimiento').modal({
+//		backdrop : 'static',
+//		keyboard : false
+//	});
+//}
+
+
 setInterval(cronometro, 1000);
 function cronometro() {
 	if (empezado == true) {

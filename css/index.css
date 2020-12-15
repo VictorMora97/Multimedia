@@ -21,6 +21,14 @@
 	color: #ebff5c; */
 }
 
+
+
+h2:hover {
+text-shadow: 1px 1px 1px black;
+}
+
+
+
 .caja-controles {
 	margin-top: 0.9em;
 	margin-left: -1em;
